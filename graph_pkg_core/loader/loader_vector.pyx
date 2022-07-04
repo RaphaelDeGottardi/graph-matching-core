@@ -51,8 +51,8 @@ cdef class LoaderVector:
                 vector = []
                 vector.append(np.array(json.loads(attr)))
                 return LabelHash(vector)
-            vector = np.array(json.loads(attr[2:447]))  #for enzymes use 17
-            hashes_str = attr[:2]+attr[452:]    #for enzymes use 22
+            vector = np.array(json.loads(attr[2:17]))  #for enzymes use 17 for dd use 447
+            hashes_str = attr[:2]+attr[22:]    #for enzymes use 22 for dd use 452
             hashes_str = hashes_str.replace('\'', '')
             hashes = hashes_str.strip('][').split(', ')
             hashes.insert(0,vector)
